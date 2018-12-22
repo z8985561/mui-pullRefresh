@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>我的分红</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!-- 适配文档 -->
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+  <link rel="stylesheet" href="lib/swiper/css/swiper.min.css">
+  <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+  <link rel="stylesheet" href="lib/mui/css/mui.picker.css">
+  <link rel="stylesheet" href="lib/mui/css/mui.poppicker.css">
+  <link rel="stylesheet" href="lib/mui/css/mui.dtpicker.css">
+  <link rel="stylesheet" href="lib/mui/css/icons-extra.css">
+  <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+  <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+  <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="base-header">
+    <div class="help-award-top">
+      <p>本月预计分红</p>
+      <h2>289.52<small>元</small></h2>
+      <ul class="my-bonus-head">
+        <li class="mui-text-center w-bar">
+          <h5>789.20</h5>
+          <p>累计分红</p>
+        </li>
+        <li class="mui-text-center w-bar">
+          <h5>789.20</h5>
+          <p>待结算分红</p>
+        </li>
+        <li class="mui-text-center">
+          <h5>789.20</h5>
+          <p>已结算分红</p>
+        </li>
+      </ul>
+    </div>
+    <div class="bottom-bar"></div>
+  </header>
+
+  <section class="content-wrap">
+    <div class="help-award-box mui-scroll-wrapper">
+      <div class="mui-scroll">
+        <div class="top mb-30">
+          <div class="left">
+            <img src="img/icon-5.png" alt=""><span>分红明细</span>
+          </div>
+          <div class="right">
+            <p id="js-date"><span class="ver-middle" data-flag="true">2018年</span><span class="mui-icon-extra mui-icon-extra-arrowrightcricle ver-middle"></span></p>
+          </div>
+        </div>
+        <p class="mb-30">2018年分红明细</p>
+        <ul class="repeat-integral-list">
+          <li>
+            <div class="left">
+              <p class="mui-ellipsis">11月份获得分红</p>
+              <span>单位（元）</span>
+            </div>
+            <div class="right price-red">+2894</div>
+          </li>
+          <li>
+            <div class="left">
+              <p class="mui-ellipsis">10月份获得分红</p>
+              <span>单位（元）</span>
+            </div>
+            <div class="right price-red">+2894</div>
+          </li>
+          <li>
+            <div class="left">
+              <p class="mui-ellipsis">9月份获得分红</p>
+              <span>单位（元）</span>
+            </div>
+            <div class="right price-red">+2894</div>
+          </li>
+          <li>
+            <div class="left">
+              <p class="mui-ellipsis">8月份获得分红</p>
+              <span>单位（元）</span>
+            </div>
+            <div class="right price-red">+2894</div>
+          </li>
+          <li>
+            <div class="left">
+              <p class="mui-ellipsis">7月份获得分红</p>
+              <span>单位（元）</span>
+            </div>
+            <div class="right price-red">+2894</div>
+          </li>
+          <li>
+            <div class="left">
+              <p class="mui-ellipsis">6月份获得分红</p>
+              <span>单位（元）</span>
+            </div>
+            <div class="right price-red">+2894</div>
+          </li>
+          <li>
+            <div class="left">
+              <p class="mui-ellipsis">5月份获得分红</p>
+              <span>单位（元）</span>
+            </div>
+            <div class="right price-red">+2894</div>
+          </li>
+          <li>
+            <div class="left">
+              <p class="mui-ellipsis">4月份获得分红</p>
+              <span>单位（元）</span>
+            </div>
+            <div class="right price-red">+2894</div>
+          </li>
+          <li>
+            <div class="left">
+              <p class="mui-ellipsis">3月份获得分红</p>
+              <span>单位（元）</span>
+            </div>
+            <div class="right price-red">+2894</div>
+          </li>
+          <li>
+            <div class="left">
+              <p class="mui-ellipsis">2月份获得分红</p>
+              <span>单位（元）</span>
+            </div>
+            <div class="right price-red">+2894</div>
+          </li>
+          <li>
+            <div class="left">
+              <p class="mui-ellipsis">1月份获得分红</p>
+              <span>单位（元）</span>
+            </div>
+            <div class="right price-red">+2894</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+  <script src="lib/swiper/js/swiper.min.js"></script>
+  <script src="lib/mui/js/mui.min.js"></script>
+  <script src="lib/mui/js/mui.picker.js"></script>
+  <script src="lib/mui/js/mui.poppicker.js"></script>
+  <script src="lib/mui/js/mui.dtpicker.js"></script>
+  <script>
+    $(function(){
+      !function(){
+        //页面适配 页面加载时自动计算设置content-wrap高度
+        $(".content-wrap .help-award-box").height($(window).height()-25-$(".base-header").height()-$(".content-wrap .top").height());
+        mui('.mui-scroll-wrapper').scroll({
+          deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+        });
+        $("#js-date").on("tap",function () {
+          var dtpicker = new mui.DtPicker({
+                      type: "year",//设置日历初始视图模式
+                      beginDate: new Date(2017, 12, 01),//设置开始日期
+                      endDate: new Date(2030, 12, 30),//设置结束日期
+                      labels: ['年'],//设置默认标签区域提示语
+                  })
+          //当用户选定日期后执行的事件
+          dtpicker.show(function(e) {
+            console.log(e.y.text);
+            window.location.href = "http://www.baidu.com?year="+e.y.text;
+          })
+        })
+
+      }()
+    })
+  </script>
+</body>
+</html>

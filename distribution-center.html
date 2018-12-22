@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>分销中心</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!-- 适配文档 -->
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+  <link rel="stylesheet" href="lib/swiper/css/swiper.min.css">
+  <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+  <link rel="stylesheet" href="lib/mui/css/icons-extra.css">
+  <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+  <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+  <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header id="distribution-header" class="base-header">
+    <div class="username">
+      <img src="img/tx-1.png" alt="">
+      <div>
+        <h4>BLOOD</h4>
+        <p>推荐人：张雯</p>
+      </div>
+    </div>
+    <div class="money">
+      <div class="left">
+        <h4>952.00元</h4>
+        <p>总收入</p>
+      </div>
+      <div class="right">
+        <h4>895.00元</h4>
+        <p>可提现收入</p>
+      </div>
+    </div>
+    <div class="bottom-bar"></div>
+  </header>
+
+  <section class="content-wrap">
+    <div class="top">
+      <div class="left">
+        <img src="img/icon-1.png" alt=""><span>我的级差</span>
+      </div>
+      <div class="right">
+        <a href="#">查看明细<span class="mui-icon mui-icon-arrowright"></span></a>
+      </div>
+    </div>
+    <ul class="distribution-money mui-text-center">
+      <li>
+        <span class="price-red">789.20</span>
+        <p>级差奖励(元)</p>
+      </li>
+      <li>
+        <span class="price-red">2789.20</span>
+        <p>平级奖励(元)</p>
+      </li>
+      <li>
+        <span class="price-red">28928.02</span>
+        <p>超级奖励(元)</p>
+      </li>
+      <li>
+        <span class="price-red">789.20</span>
+        <p>推荐奖励(元)</p>
+      </li>
+    </ul>
+    <ul class="distribution-classes">
+      <li>
+        <div class="left"><img src="img/icon-2.png" alt=""><span>帮扶奖</span></div>
+        <div class="right"><a href="#"><span class="price-red">589.36元</span><span class="mui-icon mui-icon-arrowright"></span></a></div>
+      </li>
+      <li>
+        <div class="left"><img src="img/icon-3.png" alt=""><span>我的分红</span></div>
+        <div class="right"><a href="#"><span class="price-red">589.36元</span><span class="mui-icon mui-icon-arrowright"></span></a></div>
+      </li>
+      <li>
+        <div class="left"><img src="img/icon-4.png" alt=""><span>重消积分</span></div>
+        <div class="right"><a href="#"><span>878分</span><span class="mui-icon mui-icon-arrowright"></span></a></div>
+      </li>
+    </ul>
+  </section>
+
+
+
+  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+  <script src="lib/swiper/js/swiper.min.js"></script>
+  <script src="lib/mui/js/mui.min.js"></script>
+  <script src="lib/template-web.js"></script>
+  <script>
+    $(function(){
+  // var obj = {
+  //    list:['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+  //  };
+  // var html = template('test', obj);
+  // document.getElementById('recent-news').innerHTML += html;
+    })
+  </script>
+  <script id="test" type="text/html">
+    <ul class="message">
+        {{each data as item}}
+          {{if item.type == "代课"}}
+            <li>
+              <a class="top mb-30" href="{{item.url}}">
+                <span>时间：{{item.time}}</span>
+                <span>上课地点：{{item.addresss}}</span>
+                <span>课程：{{item.curriculum}}</span>
+                <span>性别：{{item.sex}}</span>
+                <span>备注：{{item.notes}}</span>
+              </a>
+              <div class="bottom">
+                  <p class="clearfix">{{item.date}}<span class="price-red mui-pull-right">￥{{item.price}}</span></p>
+                  <a class="wechat-btn" href="{{item.wechat}}">微聊</a>
+              </div>
+            </li>
+          {{else if item.type == "拼车"}}
+            <li>
+                <div class="top mb-30">
+                    <span>时间：{{item.time}}</span>
+                    <span>出发地：{{item.starting}}</span>
+                    <span>目的地：{{item.destination}}</span>
+                    <span>所需人数：{{item.population}}</span>
+                </div>
+                <div class="bottom">
+                    <p class="clearfix">{{item.date}}</p>
+                    <a class="wechat-btn" href="{{item.wechat}}">微聊</a>
+                </div>
+            </li>
+          {{else if item.type == "代拿"}}
+            <li>
+                <div class="top mb-30">
+                    <span>内容：{{item.type}}</span>
+                    <span>快递：{{item.express}}</span>
+                    <span>数量：{{item.quantity}}</span>
+                    <span>型号：{{item.size}}</span>
+                    <span>备注：{{item.notes}}</span>
+                </div>
+                <div class="bottom">
+                    <p class="clearfix">{{item.date}}<span class="price-red mui-pull-right">￥{{item.price}}</span></p>
+                    <a class="wechat-btn" href="{{item.wechat}}">微聊</a>
+                </div>
+            </li>
+          {{else if item.type == "兼职"}}
+            <li>
+                <div class="top mb-30">
+                    <span>时间：{{item.time}}</span>
+                    <span>地点：{{item.address}}</span>
+                    <span>职位：{{item.jop}}</span>
+                    <span>所需人数：{{item.population}}</span>
+                </div>
+                <div class="bottom">
+                    <p class="clearfix">{{item.date}}</p>
+                    <a class="wechat-btn" href="{{item.wechat}}">微聊</a>
+                </div>
+            </li>
+          {{/if}}
+        {{/each}}
+</ul>
+</script>
+</body>
+</html>

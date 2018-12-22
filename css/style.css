@@ -1,0 +1,549 @@
+/* base style */
+/* reset 样式重设 */
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video,
+details,
+summary {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Microsoft Yahei", "Arial";
+  color: #333;
+  background-color: #fff;
+  font-size: 14px;
+  background-image: url(about:blank);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+a {
+  color: #06f;
+  text-decoration: none;
+}
+a:hover {
+  color: #f60;
+  text-decoration: none;
+}
+img {
+  border: none;
+  vertical-align: middle;
+  max-width: 100%;
+}
+i,
+em {
+  font-style: normal;
+}
+li {
+  list-style-type: none;
+}
+textarea {
+  resize: vertical;
+}
+input,
+select,
+textarea {
+  font-family: "\5FAE\8F6F\96C5\9ED1", "Microsoft Yahei", "Arial";
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+/* 常用布局样式 */
+/* 常用布局公共容器 */
+.container {
+  max-width: 1200px;
+  min-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* 浮动布局 */
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+/* 注意浮动布局需要在父级添加清除浮动样式 */
+.clearfix {
+  zoom: 1;
+}
+.clearfix::after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+/* flex布局 常用 */
+/* 默认 */
+.flex {
+  display: flex;
+  display: -webkit-flex;
+}
+/* 垂直居中 vertical center */
+.flex-ver {
+  -webkit-align-items: center;
+  align-items: center;
+}
+/*水平居中 center horizontally */
+.flex-hor {
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+/*两端对齐 justify align*/
+.flex-jus {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+/* 常用外边距 */
+.mt-30 {
+  margin-top: 0.4rem;
+}
+.mb-30 {
+  margin-bottom: 0.4rem;
+}
+.mb-60 {
+  margin-bottom: 0.8rem;
+}
+.mb-100 {
+  margin-bottom: 2.6667rem;
+}
+.ver-middle {
+  vertical-align: middle;
+}
+/* 常用内边距 */
+.p-lr-15 {
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+/* 分销中心头部 */
+#distribution-header {
+  position: relative;
+  padding-top: 0.5333rem;
+  background-image: url("../img/header-bg1.png");
+  overflow: hidden;
+}
+#distribution-header .username {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  margin-left: 0.2933rem;
+}
+#distribution-header .username img {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+}
+#distribution-header .username div {
+  margin-left: 0.5333rem;
+}
+#distribution-header .username div h4 {
+  font-size: 17px;
+  color: #fff;
+}
+#distribution-header .username div p {
+  font-size: 12px;
+  color: #FEBDC1;
+}
+#distribution-header .money {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+#distribution-header .money div {
+  text-align: center;
+}
+#distribution-header .money div h4 {
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+#distribution-header .money div p {
+  font-size: 13px;
+  color: #FEBDC1;
+}
+.price-red {
+  font-size: 13px;
+  color: #FC4E5F !important;
+  font-weight: 600;
+}
+.content-wrap {
+  padding: 0 0.2667rem;
+}
+.content-wrap .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content-wrap .top .left img {
+  width: 0.5067rem;
+  height: 0.5067rem;
+  margin-right: 0.2667rem;
+}
+.content-wrap .top .left span {
+  font-size: 15px;
+  vertical-align: middle;
+  font-weight: 600;
+}
+.content-wrap .top .right a {
+  color: #999;
+}
+.content-wrap .top .right a .mui-icon {
+  font-size: 18px;
+}
+.content-wrap .top .right p {
+  font-size: 17px;
+  color: #333;
+}
+.content-wrap .distribution-money {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+.content-wrap .distribution-money p {
+  font-size: 12px;
+}
+.content-wrap .distribution-classes li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.6rem;
+}
+.content-wrap .distribution-classes .left img {
+  width: 0.5067rem;
+  height: 0.5067rem;
+  margin-right: 0.2667rem;
+}
+.content-wrap .distribution-classes .left span {
+  font-size: 15px;
+  vertical-align: middle;
+  font-weight: 600;
+}
+.content-wrap .distribution-classes .right a {
+  color: #999;
+}
+.content-wrap .distribution-classes .right a .mui-icon {
+  font-size: 18px;
+}
+/* 分销中心公共头部 */
+.base-header {
+  position: relative;
+  min-height: 5.1733rem;
+  background: url("../img/header-bg2.png") no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+.base-header .bottom-bar {
+  position: absolute;
+  bottom: 0;
+  height: 0.5333rem;
+  width: 100%;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border-top-left-radius: 0.2667rem;
+  border-top-right-radius: 0.2667rem;
+}
+.base-header .help-award-top {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.base-header .help-award-top p {
+  color: #FFDCDE;
+  font-size: 13px;
+}
+.base-header .help-award-top h2 {
+  margin: 0.4rem;
+  color: #fff;
+  font-size: 28px;
+}
+.base-header .help-award-top h2 small {
+  font-size: 60%;
+}
+.base-header .help-award-top span {
+  display: inline-block;
+  width: 2.56rem;
+  height: 0.64rem;
+  border: 1px solid #FFDCDE;
+  color: #FFDCDE;
+  text-align: center;
+  border-radius: 0.32rem;
+}
+.help-award-box {
+  position: relative;
+  overflow: hidden;
+}
+.help-award-box .help-award-list {
+  margin-top: 0.5333rem;
+}
+.help-award-box .help-award-list > li {
+  margin-bottom: 0.8rem;
+}
+.help-award-box .help-award-list > li .top {
+  display: block;
+}
+.help-award-box .help-award-list > li .top .top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+.help-award-box .help-award-list > li .top .top img {
+  width: 0.6133rem;
+  height: 0.6133rem;
+  margin-right: 0.05rem;
+}
+.help-award-box .help-award-list > li .top .top span {
+  font-size: 12px;
+  color: #999;
+  font-weight: normal;
+}
+.help-award-box .help-award-list > li .top .top .ranking {
+  display: inline-block;
+  width: 1.4933rem;
+  height: 0.48rem;
+  line-height: 0.48rem;
+  background-color: #FC4C5D;
+  color: #fff;
+  border-radius: 0.24rem;
+  text-align: center;
+}
+.help-award-box .help-award-list > li .top .bottom {
+  display: flex;
+}
+.help-award-box .help-award-list > li .top .bottom img {
+  width: 1.4667rem;
+  height: 1.4667rem;
+}
+.help-award-box .help-award-list > li .top .bottom div {
+  flex: 1;
+  padding-left: 0.5333rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.help-award-box .help-award-list > li .top .bottom div span {
+  font-size: 14px;
+  color: #999;
+}
+.help-award-box .help-award-list > li .top .bottom div span:nth-of-type(2n+1) {
+  flex: 1 1 80%;
+  padding-right: 0.4rem;
+}
+.help-award-box .help-award-list > li .hr {
+  margin: 0.4rem 0;
+  border-top: 1px solid #ddd;
+}
+.help-award-box .help-award-list > li .bottom li {
+  display: flex;
+}
+.help-award-box .help-award-list > li .bottom li p {
+  width: 30%;
+  font-size: 12px;
+}
+.help-award-box .help-award-list > li .bottom li span {
+  width: 60%;
+  font-size: 12px;
+}
+.repeat-integral-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.92rem;
+  border-bottom: 1px solid #ddd;
+}
+.repeat-integral-list li .left {
+  width: 80%;
+}
+.repeat-integral-list li .left p {
+  font-size: 14px;
+  color: #666;
+}
+.repeat-integral-list li .left span {
+  color: #ccc;
+}
+.repeat-integral-list li .right {
+  font-size: 17px;
+  color: #999;
+}
+.my-bonus-head {
+  display: flex;
+  justify-content: center;
+  width: 9rem;
+}
+.my-bonus-head li {
+  position: relative;
+  padding: 0 .6rem;
+}
+.my-bonus-head li h5 {
+  font-size: 13px;
+  color: #fff;
+  margin-bottom: .3rem;
+}
+.my-bonus-head li.w-bar::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1px;
+  height: 25px;
+  transform: translateY(-50%);
+  background-color: #FFDCDE;
+}
+.rank-difference-wrap .mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+  color: #AFAFAF;
+  font-size: 13px;
+}
+.rank-difference-wrap .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+  color: #000;
+}
+.rank-difference-wrap .mui-segmented-control.mui-segmented-control-inverted ~ .mui-slider-progress-bar {
+  background-color: #FC4A5B;
+}
+.rank-difference-wrap .mui-slider .mui-segmented-control.mui-segmented-control-inverted ~ .mui-slider-group .mui-slider-item {
+  border: none;
+}
+.rank-difference-wrap .rank-difference-box {
+  position: relative;
+  overflow: hidden;
+  padding: 0 10px;
+}
+.rank-difference-wrap .rank-difference-list {
+  margin-top: 0.5333rem;
+}
+.rank-difference-wrap .rank-difference-list > li {
+  margin-bottom: 0.8rem;
+}
+.rank-difference-wrap .rank-difference-list > li .top {
+  display: block;
+}
+.rank-difference-wrap .rank-difference-list > li .top .top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+.rank-difference-wrap .rank-difference-list > li .top .top img {
+  width: 0.6133rem;
+  height: 0.6133rem;
+  margin-right: 0.05rem;
+}
+.rank-difference-wrap .rank-difference-list > li .top .top span {
+  font-size: 12px;
+  color: #999;
+  font-weight: normal;
+}
+.rank-difference-wrap .rank-difference-list > li .top .top .ranking {
+  display: inline-block;
+  width: 1.4933rem;
+  height: 0.48rem;
+  line-height: 0.48rem;
+  background-color: #FC4C5D;
+  color: #fff;
+  border-radius: 0.24rem;
+  text-align: center;
+}
+.rank-difference-wrap .rank-difference-list > li .top .bottom {
+  display: flex;
+}
+.rank-difference-wrap .rank-difference-list > li .top .bottom img {
+  width: 1.4667rem;
+  height: 1.4667rem;
+}
+.rank-difference-wrap .rank-difference-list > li .top .bottom div {
+  flex: 1;
+  padding-left: 0.5333rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.rank-difference-wrap .rank-difference-list > li .top .bottom div span {
+  font-size: 14px;
+  color: #999;
+}
+.rank-difference-wrap .rank-difference-list > li .top .bottom div span:nth-of-type(2n+1) {
+  flex: 1 1 80%;
+  padding-right: 0.4rem;
+}
+.rank-difference-wrap .rank-difference-list > li .hr {
+  margin: 0.4rem 0;
+  border-top: 1px solid #ddd;
+}
+.rank-difference-wrap .rank-difference-list > li .bottom li {
+  display: flex;
+}
+.rank-difference-wrap .rank-difference-list > li .bottom li p {
+  width: 30%;
+  font-size: 12px;
+}
+.rank-difference-wrap .rank-difference-list > li .bottom li span {
+  width: 60%;
+  font-size: 12px;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>我的等级差</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!-- 适配文档 -->
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+  <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+  <link rel="stylesheet" href="lib/mui/css/icons-extra.css">
+  <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+  <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+  <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+			.mui-control-content {
+				background-color: white;
+				min-height: 215px;
+			}
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+		</style>
+</head>
+
+<body>
+  <section class="rank-difference-wrap">
+    <div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item mui-active" href="#item1mobile">级差奖励</a>
+					<a class="mui-control-item" href="#item2mobile">平级奖励</a>
+					<a class="mui-control-item" href="#item3mobile">超级奖励</a>
+          <a class="mui-control-item" href="#item4mobile">推荐奖励</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
+				<div class="mui-slider-group">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="item1mobile-list" class="rank-difference-box">
+							<div>
+                  <ul class="rank-difference-list" data-flag="true">
+                  </ul>
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div id="item2mobile-list" class="rank-difference-box">
+							<div>
+                  <ul class="rank-difference-list" data-flag="true">
+                  </ul>
+							</div>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+            <div id="item3mobile-list" class="rank-difference-box">
+							<div>
+                  <ul class="rank-difference-list" data-flag="true">
+                  </ul>
+							</div>
+						</div>
+					</div>
+          <div id="item4mobile" class="mui-slider-item mui-control-content">
+						<div id="item4mobile-list" class="rank-difference-box">
+							<div>
+                  <ul class="rank-difference-list" data-flag="true">
+                  </ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+  </section>
+  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+  <script src="lib/swiper/js/swiper.min.js"></script>
+  <script src="lib/mui/js/mui.min.js"></script>
+  <script src="lib/template-web.js"></script>
+  <script src="http://mockjs.com/dist/mock.js"></script>
+  <script src="js/rank-difference.js"></script>
+  <script id="rank-difference-tpl" type="text/html">
+        {{each data as item}}
+          <li>
+            <div class="top">
+              <div class="top">
+                <div class="left">
+                  <img src="{{item.userPortrait}}" alt="">
+                  <span>{{item.userName}}</span>
+                </div>
+                <p class="price-red" style="font-size:15px">+{{item.award}}</p>
+              </div>
+              <div class="bottom">
+                <img src="{{item.productImg}}" alt="">
+                <div>
+                  <span>{{item.productTitle}}</span>
+                  <span>x{{item.quantity}}</span>
+                  <span>￥{{item.price}}</span>
+                  <span>{{item.orderStatus}}</span>
+                </div>
+              </div>
+            </div>
+            <div class="hr"></div>
+            <ul class="bottom">
+              <li>
+                <p>订单总价：</p><span>￥{{item.price*item.quantity}}</span>
+              </li>
+              <li>
+                <p>订单编号：</p><span>{{item.orderNumber}}</span>
+              </li>
+              <li>
+                <p>下单时间：</p><span>{{item.orderTime}}</span>
+              </li>
+              <li>
+                <p> 税费：</p><span>-￥{{item.tax}}</span>
+              </li>
+              <li>
+                <p> 重消积分：</p><span>+{{item.integral}}分</span>
+              </li>
+              <li>
+                <p>获得奖励：</p><span class="price-red">￥{{item.award}}</span>
+              </li>
+            </ul>
+          </li>
+        {{/each}}
+</script>
+</body>
+</html>
